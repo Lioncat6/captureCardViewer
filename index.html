@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="index.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="index.css" />
 
-        <title>Capture Card Viewer</title>
-    </head>
+		<title>Capture Card Viewer</title>
+	</head>
 
-    <body onmouseover="showMenu()" onmouseout="hideMenu()">
-        
-        <div class="container">
-            <div id="videoWrapper"><video autoplay='true' id="video"></video></div>
-            <div id="canvasWrapper"><canvas id="processed"></canvas></div>
-            
-        </div>
+	<body onmouseover="showMenu()" onmouseout="hideMenu()">
+		<div class="container">
+			<div id="videoWrapper"><video autoplay="true" id="video"></video></div>
+			<div id="canvasWrapper"><canvas id="processed"></canvas></div>
+		</div>
 
-        <div id="menu">
-            <img id="muteBtn" src="https://img.icons8.com/ios-filled/20/cccccc/high-volume--v1.png"/>
-            <input oninput="adjustVolume()" class="slider" id="range" type="range" min='0' max='1' value="1" step="0.01">
-            <span id="subMenu">
-                Brightness: 
-                <input type="number" name="" id="brightness" value="0">
-                Convolution Matrix:
-                <select name="matrix" id="matrix">
-                    <option value="none">none</option>
-                    <option value="sharpen">sharpen</option>
-                    <option value="edgeDetect">edgeDetect</option>
-                    <option value="emboss">emboss</option>
-                    <option value="blur">blur</option>
-                </select>
-                Screen:
-                <select name="screen" id="screen" onchange="screenSelect()">
-                    <option value="Original">Original</option>
-                    <option value="Processed">Processed</option>
-                    <option value="Both">Both</option>
-                </select>
-            </span>
-        </div>
+		<div id="menu">
+			<img id="muteBtn" src="https://img.icons8.com/ios-filled/20/cccccc/high-volume--v1.png" />
+			<input oninput="adjustVolume()" class="slider" id="range" type="range" min="0" max="1" value="1" step="0.01" />
+			<span id="subMenu">
+				Brightness:
+				<input type="number" name="" id="brightness" value="0" />
+				Matrix:
+				<select name="matrix" id="matrix">
+					<option value="none">none</option>
+					<option value="sharpen">sharpen</option>
+					<option value="edgeDetect">edgeDetect</option>
+					<option value="emboss">emboss</option>
+					<option value="blur">blur</option>
+				</select>
+				Screen:
+				<select name="screen" id="screen" onchange="screenSelect()">
+					<option value="Original">Original</option>
+					<option value="Processed">Processed</option>
+					<option value="Both">Both</option>
+				</select>
+                Devices: 
+				Video:
+				<select name="videoDevice" id="videoDevice" onchange="updateVideoSettings()"></select>
+				Audio:
+				<select name="audioDevice" id="audioDevice" onchange="updateVideoSettings()"></select>
+				Resolution:
+				<select name="resolution" id="resolution" onchange="updateVideoSettings()">
+                    <option value="1280x720">1280x720</option>
+                    <option value="1920x1080">1920x1080</option>
+					<option value="640x480">640x480</option>
+				</select>
+				FPS:
+				<select name="frameRate" id="frameRate" onchange="updateVideoSettings()">
+					<option value="30">30 FPS</option>
+					<option value="60">60 FPS</option>
+					<option value="120">120 FPS</option>
+				</select>
+			</span>
+		</div>
 
-    <!-- Custom JavaScript -->
-    <script type="text/JavaScript" src="index.js"></script>
-    <script type="text/JavaScript" src="imageProcess.js"></script>
-    </body>
+		<!-- Custom JavaScript -->
+		<script type="text/JavaScript" src="index.js"></script>
+		<script type="text/JavaScript" src="imageProcess.js"></script>
+	</body>
 </html>

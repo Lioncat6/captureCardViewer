@@ -2,6 +2,8 @@
  
 This app allows the use of capture cards (or webcams) through the Chrome browser.
 
-Try it [here.](https://tootboi.github.io/captureCardViewer/)
+Improved to support resolution and device selection options
+
+Try it [here.](https://lioncat6.github.io/captureCardViewer/)
 
 **Only works on Google Chrome.**
