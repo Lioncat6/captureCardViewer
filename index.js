@@ -1,5 +1,5 @@
 const video = document.getElementById("video");
-const constraints = { audio: { sampleRate: 96000, echoCancellation: false, autoGainControl: false }, video: { aspectRatio: 16 / 9, resizeMode: "none", frameRate: 30 } };
+const constraints = { audio: { sampleRate: 96000, echoCancellation: false, autoGainControl: false }, video: { aspectRatio: 16 / 9, resizeMode: "none", frameRate:60 } };
 const prevVol = localStorage.getItem("sliderVal");
 
 screenSelect();
